@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "f95e32d5-2da9-4b24-b789-d8d6516d12e2",
+		"name": "Spring_security_role_based_access_control",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29823983",
+		"_collection_link": "https://sadhan-vai-er-team.postman.co/workspace/CMIS~e9ca061c-8589-4f8e-af8b-1ca87418910c/collection/29823983-f95e32d5-2da9-4b24-b789-d8d6516d12e2?action=share&source=collection_link&creator=29823983"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"default_user\",\r\n    \"password\":\"user_1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/spring-jwt-security/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"spring-jwt-security",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Controller Test",
+			"item": [
+				{
+					"name": "Admin Access Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/spring-jwt-security/admin/testAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"spring-jwt-security",
+								"admin",
+								"testAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Access Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/spring-jwt-security/user/testUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"spring-jwt-security",
+								"user",
+								"testUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu_Permission",
+			"item": [
+				{
+					"name": "Add Menu Permission",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":2,\r\n    \"menuIds\":[100020002]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/spring-jwt-security/menu-permission/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"spring-jwt-security",
+								"menu-permission",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Menu Permission by User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/spring-jwt-security/menu-permission/1/get-menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"spring-jwt-security",
+								"menu-permission",
+								"1",
+								"get-menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Menu Permissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/spring-jwt-security/menu-permission/get-all-menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"spring-jwt-security",
+								"menu-permission",
+								"get-all-menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Menu Permission",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addNewMenuIds\":[100010002],\r\n    \"deleteMenuIds\":[]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/spring-jwt-security/menu-permission/2/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"spring-jwt-security",
+								"menu-permission",
+								"2",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Menu Permission",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deleteMenuIds\":[100020002]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/spring-jwt-security/menu-permission/2/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"spring-jwt-security",
+								"menu-permission",
+								"2",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/spring-jwt-security/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"spring-jwt-security",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
